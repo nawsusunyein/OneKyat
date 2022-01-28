@@ -44,7 +44,8 @@ class UIRootViewController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = backImage
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = backImage
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: #selector(UINavigationController.popViewController(animated:)))
+        self.navigationItem.leftItemsSupplementBackButton = true
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: " ", style: .plain, target: self, action: nil)
         
     }
 }
