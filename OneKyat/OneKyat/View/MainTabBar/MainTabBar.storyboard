@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Main Tab Bar View Controller-->
         <scene sceneID="3Yl-7L-OrX">
             <objects>
-                <tabBarController storyboardIdentifier="HomeTabBarController" id="7B2-Bs-ziN" customClass="HomeViewController" customModule="OneKyat" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="7B2-Bs-ziN" customClass="MainTabBarViewController" customModule="OneKyat" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6i8-sr-HS4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -33,7 +33,6 @@
         <!--Item-->
         <scene sceneID="kNy-NT-9EH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Sd-wZ-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="jgR-ha-OA2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RbM-n2-sAT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CKm-WF-rSL">
@@ -44,6 +43,7 @@
                         <segue destination="816-Tk-V0d" kind="relationship" relationship="rootViewController" id="EOP-Pj-s2P"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Sd-wZ-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-906" y="88"/>
         </scene>
@@ -130,7 +130,6 @@
         <!--Item-->
         <scene sceneID="75x-AW-OMh">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oMk-ow-eaN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="u4L-Pa-qIs" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="iK7-Ai-vUA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fvq-wI-TNW">
@@ -141,6 +140,7 @@
                         <segue destination="ilC-IF-9Bq" kind="relationship" relationship="rootViewController" id="uaQ-r1-Fzk"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMk-ow-eaN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="190" y="88"/>
         </scene>
@@ -164,7 +164,6 @@
         <!--Item-->
         <scene sceneID="46V-G6-VhY">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HiS-Bx-WbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="3Y4-7K-IAB" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="rWP-7v-HhN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nPw-v1-uJq">
@@ -175,6 +174,7 @@
                         <segue destination="hyD-Z7-3PX" kind="relationship" relationship="rootViewController" id="1Qm-aD-dZf"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HiS-Bx-WbS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2213" y="35"/>
         </scene>

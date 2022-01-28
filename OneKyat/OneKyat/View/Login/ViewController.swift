@@ -166,7 +166,7 @@ class ViewController: UIViewController, UITextViewDelegate{
     func goToHomeScreen(){
         self.loginViewModel.bindLoginSuccessLoginViewModelToVC = {
             let storyboard = UIStoryboard(name : "Home", bundle : nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController") as! HomeViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
