@@ -28,7 +28,7 @@ class ViewController: UIViewController, UITextViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideNavigationBar()
         self.setAttributesForTextFields()
         self.setAttributesForButton()
         self.txtViewTermsAndConditions.delegate = self
@@ -38,8 +38,14 @@ class ViewController: UIViewController, UITextViewDelegate{
         self.updateAgreementCheck()
         self.updateLoginCredentialsValue()
         self.updateErrorMessageForCredentials()
+        self.goToHomeScreen()
     }
 
+    
+    //Hide navigation bar
+    func hideNavigationBar(){
+        self.navigationController?.navigationBar.isHidden = true
+    }
     
     //To set bottom line,icon at textfields  and done button on top of keyboard
     func setAttributesForTextFields(){
@@ -158,7 +164,9 @@ class ViewController: UIViewController, UITextViewDelegate{
     //Go to home screen after home screen login successfully
     func goToHomeScreen(){
         self.loginViewModel.bindLoginSuccessLoginViewModelToVC = {
-            
+            let storyboard = UIStoryboard(name : "Home", bundle : nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController") as! HomeViewController
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
