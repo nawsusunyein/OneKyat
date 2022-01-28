@@ -89,6 +89,7 @@ class ViewController: UIViewController, UITextViewDelegate{
     }
     
     func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+            self.goToWebView(url : URL)
             return false
         }
 
@@ -168,5 +169,13 @@ class ViewController: UIViewController, UITextViewDelegate{
             let vc = storyboard.instantiateViewController(withIdentifier: "HomeTabBarController") as! HomeViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    //Go to web view to show terms and conditions
+    func goToWebView(url : URL){
+        let storyboard = UIStoryboard(name: "webview", bundle: nil)
+        let webViewVC = storyboard.instantiateViewController(withIdentifier: "WebViewIdentifier") as! WebViewController
+        webViewVC.urlToLoad = url
+        self.navigationController?.pushViewController(webViewVC, animated: true)
     }
 }
