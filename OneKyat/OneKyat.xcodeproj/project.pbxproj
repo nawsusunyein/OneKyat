@@ -27,6 +27,11 @@
 		6A34533C27A469DF006E41E4 /* webview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A34533B27A469DF006E41E4 /* webview.storyboard */; };
 		6A34534127A46A32006E41E4 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34534027A46A32006E41E4 /* WebViewController.swift */; };
 		6A34534627A47329006E41E4 /* UIRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34534527A47329006E41E4 /* UIRootViewController.swift */; };
+		6A34535727A48718006E41E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34535627A48718006E41E4 /* HomeViewController.swift */; };
+		6A34535F27A48A70006E41E4 /* SliderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34535D27A48A70006E41E4 /* SliderTableViewCell.swift */; };
+		6A34536027A48A70006E41E4 /* SliderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A34535E27A48A70006E41E4 /* SliderTableViewCell.xib */; };
+		6A34536E27A48C92006E41E4 /* AdvertisementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34536C27A48C91006E41E4 /* AdvertisementTableViewCell.swift */; };
+		6A34536F27A48C92006E41E4 /* AdvertisementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A34536D27A48C91006E41E4 /* AdvertisementTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +78,11 @@
 		6A34533B27A469DF006E41E4 /* webview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = webview.storyboard; sourceTree = "<group>"; };
 		6A34534027A46A32006E41E4 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		6A34534527A47329006E41E4 /* UIRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRootViewController.swift; sourceTree = "<group>"; };
+		6A34535627A48718006E41E4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6A34535D27A48A70006E41E4 /* SliderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTableViewCell.swift; sourceTree = "<group>"; };
+		6A34535E27A48A70006E41E4 /* SliderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderTableViewCell.xib; sourceTree = "<group>"; };
+		6A34536C27A48C91006E41E4 /* AdvertisementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementTableViewCell.swift; sourceTree = "<group>"; };
+		6A34536D27A48C91006E41E4 /* AdvertisementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvertisementTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,8 +239,10 @@
 		6A34531B27A45D5C006E41E4 /* MainTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				6A34535B27A48A43006E41E4 /* TableViewCell */,
 				6A34532A27A46006006E41E4 /* MainTabBar.storyboard */,
 				6A34532F27A461DF006E41E4 /* MainTabBarViewController.swift */,
+				6A34535627A48718006E41E4 /* HomeViewController.swift */,
 			);
 			path = MainTabBar;
 			sourceTree = "<group>";
@@ -242,6 +254,33 @@
 				6A34534027A46A32006E41E4 /* WebViewController.swift */,
 			);
 			path = WebView;
+			sourceTree = "<group>";
+		};
+		6A34535B27A48A43006E41E4 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A34536B27A48C6C006E41E4 /* AdvertisementTableViewCell */,
+				6A34535C27A48A4E006E41E4 /* SliderTableViewCell */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		6A34535C27A48A4E006E41E4 /* SliderTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A34535D27A48A70006E41E4 /* SliderTableViewCell.swift */,
+				6A34535E27A48A70006E41E4 /* SliderTableViewCell.xib */,
+			);
+			path = SliderTableViewCell;
+			sourceTree = "<group>";
+		};
+		6A34536B27A48C6C006E41E4 /* AdvertisementTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A34536C27A48C91006E41E4 /* AdvertisementTableViewCell.swift */,
+				6A34536D27A48C91006E41E4 /* AdvertisementTableViewCell.xib */,
+			);
+			path = AdvertisementTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +388,8 @@
 			files = (
 				6A3452A427A3C991006E41E4 /* LaunchScreen.storyboard in Resources */,
 				6A34533C27A469DF006E41E4 /* webview.storyboard in Resources */,
+				6A34536F27A48C92006E41E4 /* AdvertisementTableViewCell.xib in Resources */,
+				6A34536027A48A70006E41E4 /* SliderTableViewCell.xib in Resources */,
 				6A3452A127A3C991006E41E4 /* Assets.xcassets in Resources */,
 				6A34529F27A3C98B006E41E4 /* Main.storyboard in Resources */,
 				6A34532B27A46006006E41E4 /* MainTabBar.storyboard in Resources */,
@@ -378,9 +419,12 @@
 			files = (
 				6A34529C27A3C98B006E41E4 /* ViewController.swift in Sources */,
 				6A34530E27A440B6006E41E4 /* ValidationServices.swift in Sources */,
+				6A34536E27A48C92006E41E4 /* AdvertisementTableViewCell.swift in Sources */,
 				6A34531327A441B9006E41E4 /* StringExtension.swift in Sources */,
 				6A3452E827A3EB64006E41E4 /* ButtonDecoration.swift in Sources */,
+				6A34535F27A48A70006E41E4 /* SliderTableViewCell.swift in Sources */,
 				6A3452E327A3EA2B006E41E4 /* UIElemementsColors.swift in Sources */,
+				6A34535727A48718006E41E4 /* HomeViewController.swift in Sources */,
 				6A3452EE27A410A7006E41E4 /* NSAttributedStringExtension.swift in Sources */,
 				6A34530827A42941006E41E4 /* LoginViewModel.swift in Sources */,
 				6A34534127A46A32006E41E4 /* WebViewController.swift in Sources */,
