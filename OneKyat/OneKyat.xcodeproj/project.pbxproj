@@ -20,6 +20,8 @@
 		6A3452E827A3EB64006E41E4 /* ButtonDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3452E727A3EB63006E41E4 /* ButtonDecoration.swift */; };
 		6A3452EE27A410A7006E41E4 /* NSAttributedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3452ED27A410A7006E41E4 /* NSAttributedStringExtension.swift */; };
 		6A34530827A42941006E41E4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34530727A42940006E41E4 /* LoginViewModel.swift */; };
+		6A34530E27A440B6006E41E4 /* ValidationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34530D27A440B6006E41E4 /* ValidationServices.swift */; };
+		6A34531327A441B9006E41E4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34531227A441B9006E41E4 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		6A3452E727A3EB63006E41E4 /* ButtonDecoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDecoration.swift; sourceTree = "<group>"; };
 		6A3452ED27A410A7006E41E4 /* NSAttributedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringExtension.swift; sourceTree = "<group>"; };
 		6A34530727A42940006E41E4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6A34530D27A440B6006E41E4 /* ValidationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServices.swift; sourceTree = "<group>"; };
+		6A34531227A441B9006E41E4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,13 +113,13 @@
 		6A34529627A3C98B006E41E4 /* OneKyat */ = {
 			isa = PBXGroup;
 			children = (
+				6A34530C27A44097006E41E4 /* ValidationServices */,
 				6A34530227A4290D006E41E4 /* ViewModel */,
 				6A3452F227A415C2006E41E4 /* View */,
 				6A3452EC27A41087006E41E4 /* Extension */,
 				6A3452DC27A3E130006E41E4 /* Constants */,
 				6A3452D027A3D86A006E41E4 /* Common */,
 				6A34529727A3C98B006E41E4 /* AppDelegate.swift */,
-				6A34529B27A3C98B006E41E4 /* ViewController.swift */,
 				6A34529D27A3C98B006E41E4 /* Main.storyboard */,
 				6A3452A027A3C991006E41E4 /* Assets.xcassets */,
 				6A3452A227A3C991006E41E4 /* LaunchScreen.storyboard */,
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				6A3452ED27A410A7006E41E4 /* NSAttributedStringExtension.swift */,
+				6A34531227A441B9006E41E4 /* StringExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 		6A3452F227A415C2006E41E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6A34531727A459F6006E41E4 /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +193,22 @@
 			isa = PBXGroup;
 			children = (
 				6A34530727A42940006E41E4 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6A34530C27A44097006E41E4 /* ValidationServices */ = {
+			isa = PBXGroup;
+			children = (
+				6A34530D27A440B6006E41E4 /* ValidationServices.swift */,
+			);
+			path = ValidationServices;
+			sourceTree = "<group>";
+		};
+		6A34531727A459F6006E41E4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6A34529B27A3C98B006E41E4 /* ViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -322,6 +344,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A34529C27A3C98B006E41E4 /* ViewController.swift in Sources */,
+				6A34530E27A440B6006E41E4 /* ValidationServices.swift in Sources */,
+				6A34531327A441B9006E41E4 /* StringExtension.swift in Sources */,
 				6A3452E827A3EB64006E41E4 /* ButtonDecoration.swift in Sources */,
 				6A3452E327A3EA2B006E41E4 /* UIElemementsColors.swift in Sources */,
 				6A3452EE27A410A7006E41E4 /* NSAttributedStringExtension.swift in Sources */,

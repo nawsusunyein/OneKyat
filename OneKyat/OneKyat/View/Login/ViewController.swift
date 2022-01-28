@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITextViewDelegate{
     
     @IBOutlet weak var btnCheckAgreement: UIButton!
     
+    @IBOutlet weak var lblErrorMessage: UILabel!
+    
     var isCheckTermsConditions : Bool = true
     var isSatisfyRequestValues : Bool = false
     
@@ -35,6 +37,7 @@ class ViewController: UIViewController, UITextViewDelegate{
         
         self.updateAgreementCheck()
         self.updateLoginCredentialsValue()
+        self.updateErrorMessageForCredentials()
     }
 
     
@@ -93,6 +96,7 @@ class ViewController: UIViewController, UITextViewDelegate{
     
     //Trigger textfields value and send values to ViewModel to check
     @objc func checkTextFields(){
+        
         self.loginViewModel.checkLoginCredentialsIsEmptyOrNot(phoneNumber: self.txtPhoneNumber.text, password: self.txtPassword.text)
         self.enableOrNotLoginButton()
     }
@@ -133,6 +137,28 @@ class ViewController: UIViewController, UITextViewDelegate{
         }else{
             self.btnLogin.isEnabled = false
             self.btnLogin.backgroundColor = ButtonColor.LoginButton.disabledColor
+        }
+    }
+    
+   
+    //Send credentials when user taps on login button
+    @IBAction func loginAction(_ sender: Any) {
+        self.loginViewModel.validateCredentialsValue(phoneNumber: self.txtPhoneNumber.text ?? "", password: self.txtPassword.text ?? "")
+    }
+    
+    
+    //Bind error message values from VM according to validation checking
+    func updateErrorMessageForCredentials(){
+        self.loginViewModel.bindErrorMessageLoginViewModelToVC = {
+            self.lblErrorMessage.text = self.loginViewModel.errorMessage
+        }
+    }
+    
+    
+    //Go to home screen after home screen login successfully
+    func goToHomeScreen(){
+        self.loginViewModel.bindLoginSuccessLoginViewModelToVC = {
+            
         }
     }
 }
