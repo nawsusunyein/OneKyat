@@ -33,6 +33,7 @@
         <!--Item-->
         <scene sceneID="kNy-NT-9EH">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Sd-wZ-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="jgR-ha-OA2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RbM-n2-sAT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CKm-WF-rSL">
@@ -43,7 +44,6 @@
                         <segue destination="816-Tk-V0d" kind="relationship" relationship="rootViewController" id="EOP-Pj-s2P"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Sd-wZ-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-906" y="88"/>
         </scene>

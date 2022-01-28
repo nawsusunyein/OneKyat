@@ -7,15 +7,26 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIRootViewController {
 
     
     @IBOutlet weak var tableView: UITableView!
     
+    lazy var searchBar = UISearchBar(frame: CGRect.zero)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
-        // Do any additional setup after loading the view.
+        self.showNavigationBar()
+        self.navigationController?.navigationBar.barTintColor = UIColor.green
+        //  self.setNavigationBarColor()
+        let searchController = UISearchController(searchResultsController: nil)
+            searchController.obscuresBackgroundDuringPresentation = false
+            searchController.searchBar.placeholder = "Search artists"
+       
+           self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+            self.definesPresentationContext = true
     }
     
 
