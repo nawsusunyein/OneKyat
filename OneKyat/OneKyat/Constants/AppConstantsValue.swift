@@ -11,3 +11,7 @@ struct LoginIconName{
     public static let phone = "phonenumber"
     public static let password = "password"
 }
+
+struct WebsiteURL{
+    public static let onekyat = "https://www.onekyat.com"
+}

@@ -51,12 +51,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="d0o-FS-02H">
+                                <rect key="frame" x="24" y="767" width="366" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVA-j6-STd">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="45"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="15"/>
+                                        <state key="normal" image="check"/>
+                                        <connections>
+                                            <action selector="checkAgreeTermsAndConditions:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2to-DF-LOU"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="bottom" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Agree to our Terms &amp; Conditions" translatesAutoresizingMaskIntoConstraints="NO" id="0Vp-lF-kHC">
+                                        <rect key="frame" x="25" y="0.0" width="341" height="45"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dIM-9Q-EV6"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5kF-kP-DLJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="3FT-fG-3D6"/>
                             <constraint firstItem="RnK-7E-GMq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Bpv-fc-Fmb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="d0o-FS-02H" secondAttribute="bottom" constant="50" id="H05-RZ-gCD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kIj-a0-qE5" secondAttribute="trailing" constant="24" id="HxL-CC-1jU"/>
                             <constraint firstItem="OpE-F3-XRY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Po4-c6-rA3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OpE-F3-XRY" secondAttribute="trailing" constant="24" id="UhU-lW-yDW"/>
@@ -64,15 +88,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RnK-7E-GMq" secondAttribute="trailing" constant="24" id="b5x-LK-Bsf"/>
                             <constraint firstItem="OpE-F3-XRY" firstAttribute="top" secondItem="kIj-a0-qE5" secondAttribute="bottom" constant="45" id="exD-mk-mqz"/>
                             <constraint firstItem="RnK-7E-GMq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="k1h-xu-859"/>
+                            <constraint firstItem="d0o-FS-02H" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="r9P-pc-FtR"/>
                             <constraint firstItem="5kF-kP-DLJ" firstAttribute="top" secondItem="RnK-7E-GMq" secondAttribute="bottom" constant="36" id="rSb-By-trt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d0o-FS-02H" secondAttribute="trailing" constant="24" id="s6Z-uS-AeY"/>
                             <constraint firstItem="kIj-a0-qE5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="yF1-pZ-jnf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5kF-kP-DLJ" secondAttribute="trailing" constant="24" id="zaT-v5-Jzc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnCheckAgreement" destination="QVA-j6-STd" id="uC7-Nh-CbP"/>
                         <outlet property="btnLogin" destination="OpE-F3-XRY" id="DVL-zS-poh"/>
                         <outlet property="txtPassword" destination="kIj-a0-qE5" id="bFc-LS-85v"/>
                         <outlet property="txtPhoneNumber" destination="5kF-kP-DLJ" id="jon-94-DSa"/>
+                        <outlet property="txtViewTermsAndConditions" destination="0Vp-lF-kHC" id="qpL-Sr-BmO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -81,6 +109,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="check" width="25" height="25"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
