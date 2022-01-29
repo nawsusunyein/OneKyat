@@ -12,6 +12,7 @@ class AdvertisementTableViewCell: UITableViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
     
     weak var delegate: CustomDelegate?
+    var itemList : [ItemModel] = [ItemModel]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +25,8 @@ class AdvertisementTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(){
+    func configure(itemList : [ItemModel]){
+        self.itemList = itemList
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.setLayout()
@@ -58,13 +60,13 @@ extension AdvertisementTableViewCell : UICollectionViewDelegate, UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return self.itemList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "adsCollectionView", for: indexPath)
-
-            return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "adsCollectionView", for: indexPath) as! AdsItemCollectionViewCell
+        cell.bindDataToUI(item: self.itemList[indexPath.row])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

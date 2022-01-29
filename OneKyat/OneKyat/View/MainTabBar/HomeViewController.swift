@@ -15,6 +15,8 @@ class HomeViewController: UIRootViewController {
     
     private var adsViewModel : AdsViewModel = AdsViewModel()
     private var index : Int = 0
+    private var itemList : [ItemModel] = [ItemModel]()
+    private var sellerList : [SellerModel] = [SellerModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,9 @@ class HomeViewController: UIRootViewController {
         self.setSearchBarinNavigationBar()
         self.setCustomButtonAtRighInNavigation(iconName : "logout")
         self.setNavigationBarAttributes(title: "Home")
-        
+        self.updateItemList()
+        self.updateSellerList()
+        self.setItemListAndSellerList()
     }
     
 
@@ -33,6 +37,28 @@ class HomeViewController: UIRootViewController {
         
         let cellAds = UINib(nibName: "AdvertisementTableViewCell", bundle: nil)
         self.tableView.register(cellAds, forCellReuseIdentifier: "AdsTableViewCell")
+    }
+    
+    //Set item lists and seller list
+    func setItemListAndSellerList(){
+        self.adsViewModel.setItemListModel()
+        self.adsViewModel.setSellerList()
+    }
+    
+    //Update itemList
+    func updateItemList(){
+        self.adsViewModel.bindItemListAdsViewModelToVC = {
+            self.itemList = self.adsViewModel.itemListModel
+           
+        }
+        self.tableView.reloadData()
+    }
+    
+    //Update sellerList
+    func updateSellerList(){
+        self.adsViewModel.bindUserListAdsViewModelToVC = {
+            self.sellerList = self.adsViewModel.sellerListModel
+        }
     }
 
 }
@@ -52,7 +78,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             return cell
         }else{
             let cellAds = tableView.dequeueReusableCell(withIdentifier: "AdsTableViewCell",for: indexPath) as! AdvertisementTableViewCell
-            cellAds.configure()
+            cellAds.configure(itemList : self.itemList)
             cellAds.delegate = self
             return cellAds
         }
@@ -63,7 +89,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if(indexPath.row == 0){
             return 180.0
         }
-        return (205 * 16) / 2
+        return CGFloat((205 * self.itemList.count) / 2)
     }
     
     
