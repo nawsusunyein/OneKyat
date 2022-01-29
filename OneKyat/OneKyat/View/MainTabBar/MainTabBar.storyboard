@@ -17,6 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.24313725490196078" green="0.63921568627450975" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="unSelectedTintColor">
+                                <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <connections>
                         <segue destination="jgR-ha-OA2" kind="relationship" relationship="viewControllers" id="jEy-mF-Soc"/>
@@ -30,12 +38,11 @@
             </objects>
             <point key="canvasLocation" x="214" y="-592"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="kNy-NT-9EH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Sd-wZ-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="jgR-ha-OA2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="RbM-n2-sAT"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_unselect" id="RbM-n2-sAT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CKm-WF-rSL">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -44,6 +51,7 @@
                         <segue destination="816-Tk-V0d" kind="relationship" relationship="rootViewController" id="EOP-Pj-s2P"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Sd-wZ-6jB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-906" y="88"/>
         </scene>
@@ -167,11 +175,11 @@
             </objects>
             <point key="canvasLocation" x="3394" y="828"/>
         </scene>
-        <!--Item-->
+        <!--Message-->
         <scene sceneID="75x-AW-OMh">
             <objects>
                 <navigationController id="u4L-Pa-qIs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="iK7-Ai-vUA"/>
+                    <tabBarItem key="tabBarItem" title="Message" image="message_unselect" id="iK7-Ai-vUA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fvq-wI-TNW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -184,11 +192,11 @@
             </objects>
             <point key="canvasLocation" x="190" y="88"/>
         </scene>
-        <!--Item-->
+        <!--Notification-->
         <scene sceneID="EwI-sp-Rwe">
             <objects>
                 <navigationController id="kmb-5Q-1R4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9fK-ZF-LVp"/>
+                    <tabBarItem key="tabBarItem" title="Notification" image="notification_unselect" id="9fK-ZF-LVp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="rA5-VX-dBy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,11 +209,11 @@
             </objects>
             <point key="canvasLocation" x="1228" y="62"/>
         </scene>
-        <!--Item-->
+        <!--Favorite-->
         <scene sceneID="46V-G6-VhY">
             <objects>
                 <navigationController id="3Y4-7K-IAB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="rWP-7v-HhN"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="favorite_unselect" id="rWP-7v-HhN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nPw-v1-uJq">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -218,11 +226,11 @@
             </objects>
             <point key="canvasLocation" x="2213" y="35"/>
         </scene>
-        <!--Item-->
+        <!--Profile-->
         <scene sceneID="DHA-xe-TdS">
             <objects>
                 <navigationController id="Arx-98-iGU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BKP-SC-Ee6"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_unselect" id="BKP-SC-Ee6"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u2m-qf-XbB">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -237,6 +245,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="favorite_unselect" width="25" height="25"/>
+        <image name="home_unselect" width="25" height="25"/>
+        <image name="message_unselect" width="25" height="25"/>
+        <image name="notification_unselect" width="25" height="25"/>
+        <image name="profile_unselect" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
