@@ -17,20 +17,14 @@ class HomeViewController: UIRootViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
-        self.showNavigationBar()
-        self.navigationController?.navigationBar.barTintColor = UIColor.green
-        
-        let searchController = UISearchController(searchResultsController: nil)
-            searchController.obscuresBackgroundDuringPresentation = false
-            searchController.searchBar.placeholder = "Search artists"
-       
-           self.navigationItem.searchController = searchController
-        self.navigationItem.hidesSearchBarWhenScrolling = false
-            self.definesPresentationContext = true
+        self.setSearchBarinNavigationBar()
+        self.setCustomButtonAtRighInNavigation(iconName : "logout")
+        self.setNavigationBarAttributes(title: "Home")
     }
     
 
-    private func registerCell(){
+    //Register table view cell to show slider and ads
+     func registerCell(){
         let cell = UINib(nibName: "SliderTableViewCell", bundle: nil)
         self.tableView.register(cell, forCellReuseIdentifier: "sliderCell")
         
@@ -40,6 +34,8 @@ class HomeViewController: UIRootViewController {
 
 }
 
+
+//Set table view delegate and data soure methods
 extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
