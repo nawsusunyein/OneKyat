@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "rose1.jpeg",
+      "filename" : "banner-3.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "rose1-1.jpeg",
+      "filename" : "banner-4.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "rose1-2.jpeg",
+      "filename" : "banner-5.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

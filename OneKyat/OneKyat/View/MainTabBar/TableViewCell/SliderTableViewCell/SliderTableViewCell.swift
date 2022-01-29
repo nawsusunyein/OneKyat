@@ -13,7 +13,9 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var flowers: [String] = ["rose1","rose2","rose3"]
+    @IBOutlet weak var bannerImageView: UIImageView!
+    
+    var banner: [String] = ["banner1","banner2","banner3","banner4","banner5","banner6","banner7"]
     var imageFrame = CGRect.zero
     
     override func awakeFromNib() {
@@ -28,34 +30,54 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
         // Configure the view for the selected state
     }
     
-    func setSliderValues(){
+    func setSliderImages(){
        
-        pageControl.numberOfPages = flowers.count
-            setupScreens()
+        pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControl.Event.valueChanged)
+        configurePageControl()
+        setupImageOnScrollView()
 
-            scrollView.delegate = self
     }
     
-    func setupScreens() {
-        for index in 0..<flowers.count {
-            // 1.
-            self.frame.origin.x = scrollView.frame.size.width * CGFloat(index)
-            self.frame.size = scrollView.frame.size
+    func setupImageOnScrollView() {
+       
+        for index in 0..<banner.count {
+            //set image frame size
+            self.imageFrame = CGRect(x: UIScreen.main.bounds.size.width * CGFloat(index), y: 0, width: self.contentView.frame.width, height: 150)
             
-            // 2.
-            let imgView = UIImageView(frame: self.frame)
-            imgView.image = UIImage(named: flowers[index])
-
+            //create image view to add in scrollview for slider
+            let imgView = UIImageView(frame: self.imageFrame)
+            imgView.image = UIImage(named: banner[index])
+            imgView.contentMode = .scaleAspectFit
+         
+            //add image view in scroll view
             self.scrollView.addSubview(imgView)
         }
 
-        // 3.
-        scrollView.contentSize = CGSize(width: (scrollView.frame.size.width * CGFloat(flowers.count)), height: scrollView.frame.size.height)
+        //set scroll view width and height
+        scrollView.contentSize = CGSize(width: (UIScreen.main.bounds.size.width * CGFloat(self.banner.count)), height: scrollView.frame.size.height)
         scrollView.delegate = self
     }
     
+    
+    //Define page control attributes
+    func configurePageControl() {
+        self.pageControl.numberOfPages = banner.count
+        self.pageControl.tintColor = UIColor.red
+        self.pageControl.pageIndicatorTintColor = UIColor.black
+        self.pageControl.currentPageIndicatorTintColor = ButtonColor.LoginButton.enabledColor
+    }
+    
+    
+    //Change image according to user taps on pager control
+    @objc func changePage(sender: AnyObject) -> () {
+        let x = CGFloat(pageControl.currentPage) * scrollView.frame.size.width
+        scrollView.setContentOffset(CGPoint(x:x, y:0), animated: true)
+    }
+    
+    
+    //Get page number when user scroll in scrollview without using page control
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let pageNumber = scrollView.contentOffset.x / scrollView.frame.size.width
+        let pageNumber = ceil(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
     }
 }

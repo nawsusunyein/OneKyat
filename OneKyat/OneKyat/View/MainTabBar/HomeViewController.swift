@@ -19,7 +19,7 @@ class HomeViewController: UIRootViewController {
         self.registerCell()
         self.showNavigationBar()
         self.navigationController?.navigationBar.barTintColor = UIColor.green
-        //  self.setNavigationBarColor()
+        
         let searchController = UISearchController(searchResultsController: nil)
             searchController.obscuresBackgroundDuringPresentation = false
             searchController.searchBar.placeholder = "Search artists"
@@ -49,14 +49,13 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell", for: indexPath) as! SliderTableViewCell
-            cell.setSliderValues()
+            cell.setSliderImages()
             return cell
         }else{
             let cellAds = tableView.dequeueReusableCell(withIdentifier: "AdsTableViewCell",for: indexPath) as! AdvertisementTableViewCell
             return cellAds
         }
         
-        //return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
