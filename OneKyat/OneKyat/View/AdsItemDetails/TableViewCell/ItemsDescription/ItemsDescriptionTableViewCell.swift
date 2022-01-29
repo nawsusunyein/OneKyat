@@ -9,6 +9,9 @@ import UIKit
 
 class ItemsDescriptionTableViewCell: UITableViewCell {
 
+    
+    @IBOutlet weak var itemDescription: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

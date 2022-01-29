@@ -45,6 +45,7 @@
 		6A8CB02127A57FA80076C764 /* ItemsSellerProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8CB01F27A57FA80076C764 /* ItemsSellerProfileTableViewCell.xib */; };
 		6A8CB02827A57FDE0076C764 /* ItemsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8CB02627A57FDE0076C764 /* ItemsDescriptionTableViewCell.swift */; };
 		6A8CB02927A57FDE0076C764 /* ItemsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8CB02727A57FDE0076C764 /* ItemsDescriptionTableViewCell.xib */; };
+		6A8CB02F27A599940076C764 /* ImageDecoration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8CB02E27A599930076C764 /* ImageDecoration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		6A8CB01F27A57FA80076C764 /* ItemsSellerProfileTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsSellerProfileTableViewCell.xib; sourceTree = "<group>"; };
 		6A8CB02627A57FDE0076C764 /* ItemsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		6A8CB02727A57FDE0076C764 /* ItemsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		6A8CB02E27A599930076C764 /* ImageDecoration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDecoration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				6A3452E227A3EA2B006E41E4 /* UIElemementsColors.swift */,
 				6A3452E727A3EB63006E41E4 /* ButtonDecoration.swift */,
 				6A8CB00C27A57A460076C764 /* CommonOperations.swift */,
+				6A8CB02E27A599930076C764 /* ImageDecoration.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			files = (
 				6A8CAFDC27A5212F0076C764 /* ItemModel.swift in Sources */,
 				6A8CB02027A57FA80076C764 /* ItemsSellerProfileTableViewCell.swift in Sources */,
+				6A8CB02F27A599940076C764 /* ImageDecoration.swift in Sources */,
 				6A34529C27A3C98B006E41E4 /* ViewController.swift in Sources */,
 				6A34530E27A440B6006E41E4 /* ValidationServices.swift in Sources */,
 				6A34536E27A48C92006E41E4 /* AdvertisementTableViewCell.swift in Sources */,

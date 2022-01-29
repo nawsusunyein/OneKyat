@@ -9,6 +9,15 @@ import UIKit
 
 class ItemsSellerProfileTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var lblSellerName: UILabel!
+    
+    @IBOutlet weak var lblSellerId: UILabel!
+    
+    @IBOutlet weak var lblLocation: UILabel!
+    
+    @IBOutlet weak var lblItemUploadTime: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,5 +28,10 @@ class ItemsSellerProfileTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func bindProfileInformation(){
+        ImageDecoration.shared.setImageCircleCorner(imageView: self.profileImageView)
+    }
+    
     
 }

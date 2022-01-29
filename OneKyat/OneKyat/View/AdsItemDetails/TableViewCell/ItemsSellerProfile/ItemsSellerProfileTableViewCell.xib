@@ -141,6 +141,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblItemUploadTime" destination="Djt-pS-hJS" id="mi4-03-wh6"/>
+                <outlet property="lblLocation" destination="bn8-Us-uE8" id="QS8-FK-5Im"/>
+                <outlet property="lblSellerId" destination="JH5-r3-jdD" id="fMD-BC-Qpb"/>
+                <outlet property="lblSellerName" destination="lB4-bq-cqN" id="Gch-cJ-Zv5"/>
+                <outlet property="profileImageView" destination="Q2h-Py-8Iw" id="0g1-Nz-PQ1"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="123.54910714285714"/>
         </tableViewCell>
     </objects>

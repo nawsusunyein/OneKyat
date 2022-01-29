@@ -97,7 +97,7 @@ extension AdsItemDetailsViewController : UITableViewDelegate, UITableViewDataSou
             return cellItemsImage
         }else if(indexPath.row == 1){
             let cellSellerProfile = tableView.dequeueReusableCell(withIdentifier: "ItemsSellerProfileIdentifier",for: indexPath) as! ItemsSellerProfileTableViewCell
-            
+            cellSellerProfile.bindProfileInformation()
             return cellSellerProfile
         }else{
             let cellItemDescription = tableView.dequeueReusableCell(withIdentifier: "ItemsDescriptionIdentifier", for: indexPath) as! ItemsDescriptionTableViewCell

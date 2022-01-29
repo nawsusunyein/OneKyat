@@ -70,6 +70,11 @@
                 <constraint firstItem="B6A-pY-qiA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="N71-KO-lSo"/>
             </constraints>
             <size key="customSize" width="146" height="213"/>
+            <connections>
+                <outlet property="itemImage" destination="Yl1-TS-YgX" id="B1z-u1-2Lh"/>
+                <outlet property="itemName" destination="nSR-ry-DDM" id="mpX-0Q-0bF"/>
+                <outlet property="itemPrice" destination="dOa-qK-Wxj" id="KCV-lQ-eDG"/>
+            </connections>
             <point key="canvasLocation" x="165.21739130434784" y="120.20089285714285"/>
         </collectionViewCell>
     </objects>
