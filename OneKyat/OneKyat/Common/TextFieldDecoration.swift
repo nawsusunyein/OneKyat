@@ -55,4 +55,22 @@ class TextFieldDecoration{
         textField.inputAccessoryView = toolBar
     }
     
+    
+    //To add button at the right side of textfield
+    func showButtonOnRightSideOfTextfield(textField: UITextField){
+        let btnSend = UIButton(type: .custom)
+        btnSend.frame = CGRect(x: CGFloat(textField.frame.size.width - 25), y: CGFloat(5), width: CGFloat(25), height: CGFloat(25))
+        btnSend.setBackgroundImage(UIImage(named: "send.png"), for: .normal)
+        textField.rightView = btnSend
+        textField.rightViewMode = .always
+    }
+    
+    
+    //To set textfield corner
+    func setTextFieldCorner(textField : UITextField, corner : CGFloat){
+        textField.layer.cornerRadius = corner
+        textField.layer.borderColor = UIColor.lightGray.cgColor
+        textField.layer.borderWidth = 1.0
+        textField.clipsToBounds = true
+    }
 }

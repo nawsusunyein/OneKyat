@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemsDetailsImageIdentifier" rowHeight="269" id="KGk-i7-Jjw" customClass="ItemsImageTableViewCell" customModule="OneKyat" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BmI-RP-PyB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="hEV-tH-zn3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Redmi 9 (Global)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OR-15-ben">
+                        <rect key="frame" x="8" y="208" width="304" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="FbH-u9-MiC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1300000 MMK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgw-6m-ZVZ">
+                        <rect key="frame" x="8" y="236" width="304" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="MGG-hM-TO1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.24313725489999999" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Cgw-6m-ZVZ" firstAttribute="top" secondItem="2OR-15-ben" secondAttribute="bottom" constant="8" id="0qd-w1-uKS"/>
+                    <constraint firstItem="BmI-RP-PyB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9LK-3I-rmB"/>
+                    <constraint firstItem="BmI-RP-PyB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CoU-aZ-geh"/>
+                    <constraint firstItem="BmI-RP-PyB" firstAttribute="centerX" secondItem="2OR-15-ben" secondAttribute="centerX" id="Dt6-c2-BpF"/>
+                    <constraint firstAttribute="trailing" secondItem="Cgw-6m-ZVZ" secondAttribute="trailing" constant="8" id="Hnr-0A-bBa"/>
+                    <constraint firstItem="2OR-15-ben" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="S2A-5b-2sQ"/>
+                    <constraint firstAttribute="trailing" secondItem="2OR-15-ben" secondAttribute="trailing" constant="8" id="XVw-QG-0d5"/>
+                    <constraint firstItem="Cgw-6m-ZVZ" firstAttribute="top" secondItem="2OR-15-ben" secondAttribute="bottom" constant="8" id="dig-W8-5Pu"/>
+                    <constraint firstAttribute="bottom" secondItem="Cgw-6m-ZVZ" secondAttribute="bottom" constant="13" id="eb9-7u-WkD"/>
+                    <constraint firstItem="Cgw-6m-ZVZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="gVL-Lg-2hX"/>
+                    <constraint firstItem="2OR-15-ben" firstAttribute="top" secondItem="BmI-RP-PyB" secondAttribute="bottom" constant="8" id="sdz-8h-T5v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="itemsImageView" destination="BmI-RP-PyB" id="oXR-rq-UiM"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="171.76339285714286"/>
+        </tableViewCell>
+    </objects>
+</document>
