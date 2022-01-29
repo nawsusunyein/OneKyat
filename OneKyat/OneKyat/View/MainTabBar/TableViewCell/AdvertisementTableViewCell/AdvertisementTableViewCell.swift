@@ -11,6 +11,8 @@ class AdvertisementTableViewCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    weak var delegate: CustomDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -65,6 +67,20 @@ extension AdvertisementTableViewCell : UICollectionViewDelegate, UICollectionVie
             return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("index : \(indexPath.row)")
+        delegate?.didSelectItem(index: indexPath.row)
+        
+    }
     
-    
+}
+
+extension AdvertisementTableViewCell : CustomDelegate{
+    func didSelectItem(index: Int) {
+        delegate?.didSelectItem(index: index)
+    }
+}
+
+protocol CustomDelegate: class {
+    func didSelectItem(index : Int)
 }

@@ -12,7 +12,9 @@ class HomeViewController: UIRootViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var searchBar = UISearchBar(frame: CGRect.zero)
+    
+    private var adsViewModel : AdsViewModel = AdsViewModel()
+    private var index : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +22,7 @@ class HomeViewController: UIRootViewController {
         self.setSearchBarinNavigationBar()
         self.setCustomButtonAtRighInNavigation(iconName : "logout")
         self.setNavigationBarAttributes(title: "Home")
+        
     }
     
 
@@ -49,6 +52,8 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
             return cell
         }else{
             let cellAds = tableView.dequeueReusableCell(withIdentifier: "AdsTableViewCell",for: indexPath) as! AdvertisementTableViewCell
+            cellAds.configure()
+            cellAds.delegate = self
             return cellAds
         }
         
@@ -58,8 +63,17 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if(indexPath.row == 0){
             return 180.0
         }
-        return UITableView.automaticDimension
+        return (205 * 16) / 2
     }
     
     
+}
+
+extension HomeViewController : CustomDelegate{
+    func didSelectItem(index: Int) {
+        let storyboard = UIStoryboard(name : "AdsItemDetails", bundle : nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AdsItemDetailsIdentifier") as! AdsItemDetailsViewController
+        vc.idValue = index
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

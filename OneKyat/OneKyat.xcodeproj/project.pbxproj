@@ -36,6 +36,8 @@
 		6A8CAFE527A522950076C764 /* AdsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8CAFE427A522950076C764 /* AdsViewModel.swift */; };
 		6A8CAFED27A5260D0076C764 /* AdsItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8CAFEB27A5260D0076C764 /* AdsItemCollectionViewCell.swift */; };
 		6A8CAFEE27A5260D0076C764 /* AdsItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A8CAFEC27A5260D0076C764 /* AdsItemCollectionViewCell.xib */; };
+		6A8CAFF727A549540076C764 /* AdsItemDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A8CAFF627A549540076C764 /* AdsItemDetails.storyboard */; };
+		6A8CAFFC27A5496F0076C764 /* AdsItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8CAFFB27A5496F0076C764 /* AdsItemDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		6A8CAFE427A522950076C764 /* AdsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsViewModel.swift; sourceTree = "<group>"; };
 		6A8CAFEB27A5260D0076C764 /* AdsItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		6A8CAFEC27A5260D0076C764 /* AdsItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdsItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		6A8CAFF627A549540076C764 /* AdsItemDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdsItemDetails.storyboard; sourceTree = "<group>"; };
+		6A8CAFFB27A5496F0076C764 /* AdsItemDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsItemDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +209,7 @@
 		6A3452F227A415C2006E41E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6A8CAFF527A5493B0076C764 /* AdsItemDetails */,
 				6A34533A27A469CA006E41E4 /* WebView */,
 				6A34531B27A45D5C006E41E4 /* MainTabBar */,
 				6A34531727A459F6006E41E4 /* Login */,
@@ -327,6 +332,15 @@
 			path = AdsItemCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		6A8CAFF527A5493B0076C764 /* AdsItemDetails */ = {
+			isa = PBXGroup;
+			children = (
+				6A8CAFF627A549540076C764 /* AdsItemDetails.storyboard */,
+				6A8CAFFB27A5496F0076C764 /* AdsItemDetailsViewController.swift */,
+			);
+			path = AdsItemDetails;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -436,6 +450,7 @@
 				6A34536027A48A70006E41E4 /* SliderTableViewCell.xib in Resources */,
 				6A8CAFEE27A5260D0076C764 /* AdsItemCollectionViewCell.xib in Resources */,
 				6A3452A127A3C991006E41E4 /* Assets.xcassets in Resources */,
+				6A8CAFF727A549540076C764 /* AdsItemDetails.storyboard in Resources */,
 				6A34529F27A3C98B006E41E4 /* Main.storyboard in Resources */,
 				6A34532B27A46006006E41E4 /* MainTabBar.storyboard in Resources */,
 			);
@@ -479,6 +494,7 @@
 				6A8CAFED27A5260D0076C764 /* AdsItemCollectionViewCell.swift in Sources */,
 				6A34534627A47329006E41E4 /* UIRootViewController.swift in Sources */,
 				6A3452DE27A3E150006E41E4 /* AppConstantsValue.swift in Sources */,
+				6A8CAFFC27A5496F0076C764 /* AdsItemDetailsViewController.swift in Sources */,
 				6A3452D527A3D96B006E41E4 /* TextFieldDecoration.swift in Sources */,
 				6A34529827A3C98B006E41E4 /* AppDelegate.swift in Sources */,
 			);
