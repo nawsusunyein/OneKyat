@@ -55,8 +55,8 @@ class ViewController: UIRootViewController, UITextViewDelegate{
         TextFieldDecoration.shared.showBottonLineOnTextField(textField : self.txtPassword, width : self.view.frame.width)
        
         //show icon at left side of textfield
-        TextFieldDecoration.shared.showIconLeftOnTextField(textField: self.txtPhoneNumber, iconName: LoginIconName.phone)
-        TextFieldDecoration.shared.showIconLeftOnTextField(textField: self.txtPassword, iconName: LoginIconName.password)
+        TextFieldDecoration.shared.showIconLeftOnTextField(textField: self.txtPhoneNumber, iconName: IconName.phone)
+        TextFieldDecoration.shared.showIconLeftOnTextField(textField: self.txtPassword, iconName: IconName.password)
         
         //show done button on toolbar of keyboard
         TextFieldDecoration.shared.showDoneButtonOnKeyboard(textField: self.txtPhoneNumber)
@@ -83,7 +83,7 @@ class ViewController: UIRootViewController, UITextViewDelegate{
     func setAttributesForTermsAndConditions(){
         let path = WebsiteURL.onekyat
         let text = txtViewTermsAndConditions.text ?? ""
-        let attributedString = NSAttributedString.makeHyperLink(path: path, fullString : text, subString: "Terms & Conditions")
+        let attributedString = NSAttributedString.makeHyperLink(path: path, fullString : text, subString: TextValue.terms)
         txtViewTermsAndConditions.textAlignment = .center
         txtViewTermsAndConditions.attributedText = attributedString
     }
@@ -122,7 +122,7 @@ class ViewController: UIRootViewController, UITextViewDelegate{
         self.loginViewModel.bindCheckAgreementValueLoginViewModelToVC = {
            
             self.isCheckTermsConditions = self.loginViewModel.isCheckAgreement
-            self.btnCheckAgreement.setImage(UIImage(named: self.isCheckTermsConditions ? "check" : "uncheck"), for: .normal)
+            self.btnCheckAgreement.setImage(UIImage(named: self.isCheckTermsConditions ? IconName.check : IconName.uncheck), for: .normal)
         }
         
     }
@@ -165,16 +165,16 @@ class ViewController: UIRootViewController, UITextViewDelegate{
     //Go to home screen after home screen login successfully
     func goToHomeScreen(){
         self.loginViewModel.bindLoginSuccessLoginViewModelToVC = {
-            let storyboard = UIStoryboard(name : "MainTabBar", bundle : nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
+            let storyboard = UIStoryboard(name : StoryboardName.MainTabBarView, bundle : nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: ScreenIdentifier.MainTabBarViewIdentifier) as! MainTabBarViewController
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
     //Go to web view to show terms and conditions
     func goToWebView(url : URL){
-        let storyboard = UIStoryboard(name: "webview", bundle: nil)
-        let webViewVC = storyboard.instantiateViewController(withIdentifier: "WebViewIdentifier") as! WebViewController
+        let storyboard = UIStoryboard(name: StoryboardName.WebView, bundle: nil)
+        let webViewVC = storyboard.instantiateViewController(withIdentifier: ScreenIdentifier.WebViewIdentifier) as! WebViewController
         webViewVC.urlToLoad = url
         self.navigationController?.pushViewController(webViewVC, animated: true)
     }

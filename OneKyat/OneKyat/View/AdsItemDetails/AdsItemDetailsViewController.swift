@@ -70,15 +70,15 @@ class AdsItemDetailsViewController: UIViewController {
     
     //Register table view cells to show image and user profile and description
      func registerCell(){
-        let cellItemsImage = UINib(nibName: "ItemsImageTableViewCell", bundle: nil)
-        self.tableView.register(cellItemsImage, forCellReuseIdentifier: "ItemsDetailsImageIdentifier")
+        let cellItemsImage = UINib(nibName: TableViewCellXib.ItemsImageView, bundle: nil)
+        self.tableView.register(cellItemsImage, forCellReuseIdentifier: ScreenIdentifier.ItemImageViewIdentifier)
         
-        let cellSellerProfile = UINib(nibName: "ItemsSellerProfileTableViewCell", bundle: nil)
-        self.tableView.register(cellSellerProfile, forCellReuseIdentifier: "ItemsSellerProfileIdentifier")
+        let cellSellerProfile = UINib(nibName: TableViewCellXib.ProfileImageView, bundle: nil)
+        self.tableView.register(cellSellerProfile, forCellReuseIdentifier: ScreenIdentifier.ProfileImageViewIdentifier)
         
         
-        let cellItemDescription = UINib(nibName: "ItemsDescriptionTableViewCell", bundle: nil)
-        self.tableView.register(cellItemDescription, forCellReuseIdentifier: "ItemsDescriptionIdentifier")
+        let cellItemDescription = UINib(nibName: TableViewCellXib.ItemsDescriptionView, bundle: nil)
+        self.tableView.register(cellItemDescription, forCellReuseIdentifier: ScreenIdentifier.ItemDescriptionViewIdentifier)
     }
     
     //Set textfield attributes
@@ -113,15 +113,15 @@ extension AdsItemDetailsViewController : UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0){
-            let cellItemsImage = tableView.dequeueReusableCell(withIdentifier: "ItemsDetailsImageIdentifier", for: indexPath) as! ItemsImageTableViewCell
+            let cellItemsImage = tableView.dequeueReusableCell(withIdentifier: ScreenIdentifier.ItemImageViewIdentifier, for: indexPath) as! ItemsImageTableViewCell
             cellItemsImage.bindItemInfoToUI(item: self.itemInfo)
             return cellItemsImage
         }else if(indexPath.row == 1){
-            let cellSellerProfile = tableView.dequeueReusableCell(withIdentifier: "ItemsSellerProfileIdentifier",for: indexPath) as! ItemsSellerProfileTableViewCell
-            cellSellerProfile.bindProfileInformation(sellerInfo: self.sellerInfo, itemUploadTime : "2 weeks ago")
+            let cellSellerProfile = tableView.dequeueReusableCell(withIdentifier: ScreenIdentifier.ProfileImageViewIdentifier,for: indexPath) as! ItemsSellerProfileTableViewCell
+            cellSellerProfile.bindProfileInformation(sellerInfo: self.sellerInfo, itemUploadTime : TextValue.samepleTime)
             return cellSellerProfile
         }else{
-            let cellItemDescription = tableView.dequeueReusableCell(withIdentifier: "ItemsDescriptionIdentifier", for: indexPath) as! ItemsDescriptionTableViewCell
+            let cellItemDescription = tableView.dequeueReusableCell(withIdentifier: ScreenIdentifier.ItemDescriptionViewIdentifier, for: indexPath) as! ItemsDescriptionTableViewCell
             cellItemDescription.bindItemDescriptionToUI(itemDescription : self.itemInfo?.itemDescription ?? "")
             return cellItemDescription
         }

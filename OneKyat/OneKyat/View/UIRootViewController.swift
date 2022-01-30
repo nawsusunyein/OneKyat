@@ -111,7 +111,7 @@ class UIRootViewController: UIViewController {
     
     //Logout app
     @objc func logout(){
-        UserDefaults.standard.setValue("0", forKey: "isLogged")
+        UserDefaults.standard.setValue(TextValue.notLogin, forKey: Keys.isLogged)
         CommonOperations.shared.showLoginScreen()
     }
 }

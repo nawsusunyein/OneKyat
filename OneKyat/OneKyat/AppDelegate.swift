@@ -20,8 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   
     func checkAppLoggedInOrNot(){
-        if let isLogged = UserDefaults.standard.string(forKey: "isLogged"){
-            if(isLogged == "0") // user is not logged in
+        if let isLogged = UserDefaults.standard.string(forKey: Keys.isLogged){
+            if(isLogged == TextValue.notLogin) // user is not logged in
             {
                 CommonOperations.shared.showLoginScreen()
             }else{
@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }else{
             //user is new user
-            UserDefaults.standard.setValue("0", forKey: "isLogged")
+            UserDefaults.standard.setValue(TextValue.notLogin, forKey: Keys.isLogged)
         }
     }
     

@@ -36,8 +36,8 @@ class AdvertisementTableViewCell: UITableViewCell {
     
     //Register collection view cell nib
     func registerCollectionViewCell(){
-        let nibName = UINib(nibName:"AdsItemCollectionViewCell", bundle: nil)
-        self.collectionView.register(nibName, forCellWithReuseIdentifier: "adsCollectionView")
+        let nibName = UINib(nibName:TableViewCellXib.AdvertisementCollectionListView, bundle: nil)
+        self.collectionView.register(nibName, forCellWithReuseIdentifier: ScreenIdentifier.AdvertisementCollectionViewIdentifier)
     }
    
     
@@ -64,13 +64,12 @@ extension AdvertisementTableViewCell : UICollectionViewDelegate, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "adsCollectionView", for: indexPath) as! AdsItemCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ScreenIdentifier.AdvertisementCollectionViewIdentifier, for: indexPath) as! AdsItemCollectionViewCell
         cell.bindDataToUI(item: self.itemList[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("index : \(indexPath.row)")
         let selectedItem = self.itemList[indexPath.row]
         delegate?.didSelectItem(selectedItem: selectedItem)
         

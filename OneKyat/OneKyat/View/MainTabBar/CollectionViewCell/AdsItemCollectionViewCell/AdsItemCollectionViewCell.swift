@@ -27,7 +27,7 @@ class AdsItemCollectionViewCell: UICollectionViewCell {
     func bindDataToUI(item : ItemModel){
         self.itemImage.image = UIImage(named: item.itemImage)
         self.itemName.text = item.itemName
-        self.itemPrice.text = String(item.itemPrice) + " MMK"
+        self.itemPrice.text = String(item.itemPrice) + " \(TextValue.kyat)"
         UIViewDecoration.shared.cardView(corner: 5.0, shadowColor: UIColor.black, cardView: self.itemCardView, shadowWidth: 2.0, shadowHeight: 1.0,opacity: 0.8)
     }
 }

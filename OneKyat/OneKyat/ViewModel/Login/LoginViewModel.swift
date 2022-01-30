@@ -82,13 +82,13 @@ class LoginViewModel : NSObject{
     }
     
     func checkLoginCredentialsCorrectOrNot(){
-        if(self.phoneNumber == "09420000001" && self.password == "password_123$#"){
+        if(self.phoneNumber == CredentialsKey.phone && self.password == CredentialsKey.password){
             self.errorMessage = ""
-            UserDefaults.standard.setValue("1", forKey: "isLogged")
+            UserDefaults.standard.setValue(TextValue.loggedIn, forKey: Keys.isLogged)
             self.isSuccess = true
         }else{
-            self.errorMessage = "Credentials Value is not correct"
-            UserDefaults.standard.setValue("0", forKey: "isLogged")
+            self.errorMessage = TextValue.errLoginCredentialsWrong
+            UserDefaults.standard.setValue(TextValue.notLogin, forKey: Keys.isLogged)
         }
     }
    

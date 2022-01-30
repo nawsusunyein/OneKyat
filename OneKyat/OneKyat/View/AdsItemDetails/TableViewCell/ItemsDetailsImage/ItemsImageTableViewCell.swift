@@ -27,6 +27,6 @@ class ItemsImageTableViewCell: UITableViewCell {
     func bindItemInfoToUI(item : ItemModel?){
         self.itemsImageView.image = UIImage(named : item?.itemImage ?? "")
         self.itemName.text = item?.itemName
-        self.itemPrice.text = "\(String(item?.itemPrice ?? 0.0)) MMK"
+        self.itemPrice.text = "\(String(item?.itemPrice ?? 0.0)) \(TextValue.kyat)"
     }
 }

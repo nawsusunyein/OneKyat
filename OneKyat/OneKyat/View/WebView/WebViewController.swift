@@ -21,7 +21,7 @@ class WebViewController: UIRootViewController {
         self.showNavigationBar()
         self.addActivityToWebView()
         self.setWebViewAttributes()
-        self.setNavigationBarAttributes(title : "Terms and Conditions")
+        self.setNavigationBarAttributes(title : ScreenTitle.termsAndConditions)
     }
     
     func setWebViewAttributes(){

@@ -33,7 +33,7 @@ class ItemsSellerProfileTableViewCell: UITableViewCell {
         ImageDecoration.shared.setImageCircleCorner(imageView: self.profileImageView)
         self.profileImageView.image = UIImage(named: sellerInfo?.sellerImage ?? "")
         self.lblSellerName.text = sellerInfo?.sellerName
-        self.lblSellerId.text = "@ \(sellerInfo?.sellerId ?? "")"
+        self.lblSellerId.text = "\(TextValue.prefixSign) \(sellerInfo?.sellerId ?? "")"
         self.lblLocation.text = sellerInfo?.sellerLocation
         self.lblItemUploadTime.text = itemUploadTime
     }
