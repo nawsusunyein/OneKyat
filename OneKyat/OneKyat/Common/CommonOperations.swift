@@ -17,4 +17,25 @@ class CommonOperations{
              UIApplication.shared.open(url)
          }
     }
+    
+    
+    //Go to login screen
+    func showLoginScreen(){
+        let storyboard = UIStoryboard(name : "Main", bundle : nil)
+        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewControllerIdentifier") as! ViewController
+        let nav = UINavigationController()
+        nav.viewControllers = [loginVC]
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = nav
+    }
+    
+    //To show home screen if user is already logged in
+    func showHomeScreen(){
+        let storyboard = UIStoryboard(name : "MainTabBar", bundle : nil)
+        let mainTabVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.window?.rootViewController = mainTabVC
+    }
+   
+   
 }

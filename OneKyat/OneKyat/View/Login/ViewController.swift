@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextViewDelegate{
+class ViewController: UIRootViewController, UITextViewDelegate{
 
     
     @IBOutlet weak var txtPhoneNumber: UITextField!
@@ -28,7 +28,6 @@ class ViewController: UIViewController, UITextViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideNavigationBar()
         self.setAttributesForTextFields()
         self.setAttributesForButton()
         self.txtViewTermsAndConditions.delegate = self
@@ -42,10 +41,11 @@ class ViewController: UIViewController, UITextViewDelegate{
     }
 
     
-    //Hide navigation bar
-    func hideNavigationBar(){
-        self.navigationController?.navigationBar.isHidden = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hideNavigationBar()
     }
+    
     
     //To set bottom line,icon at textfields  and done button on top of keyboard
     func setAttributesForTextFields(){

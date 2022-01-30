@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let isLogged = UserDefaults.standard.string(forKey: "isLogged"){
             if(isLogged == "0") // user is not logged in
             {
-                self.showLoginScreen()
+                CommonOperations.shared.showLoginScreen()
             }else{
-                self.showHomeScreen()
+                CommonOperations.shared.showHomeScreen()
             }
         }else{
             //user is new user
@@ -33,20 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    //To show login screen if user is new user or user is not logged in
-    func showLoginScreen(){
-        let storyboard = UIStoryboard(name : "Main", bundle : nil)
-        let loginVC = storyboard.instantiateViewController(withIdentifier: "LoginViewControllerIdentifier") as! ViewController
-        self.window?.rootViewController = loginVC
-    }
+   
     
-    
-    //To show home screen if user is already logged in
-    func showHomeScreen(){
-        let storyboard = UIStoryboard(name : "MainTabBar", bundle : nil)
-        let mainTabVC = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarViewController
-        self.window?.rootViewController = mainTabVC
-    }
+   
 
 }
 

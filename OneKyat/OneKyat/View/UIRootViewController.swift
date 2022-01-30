@@ -102,8 +102,16 @@ class UIRootViewController: UIViewController {
     //Set custom  button image in right item of navigation bar
     func setCustomButtonAtRighInNavigation(iconName: String){
         
-        let rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: iconName), style: .done, target: self, action: nil)
+        let rightBarButtonItem = UIBarButtonItem.init(image: UIImage(named: iconName), style: .done, target: self, action: #selector(logout))
+        
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
+    }
+    
+    
+    //Logout app
+    @objc func logout(){
+        UserDefaults.standard.setValue("0", forKey: "isLogged")
+        CommonOperations.shared.showLoginScreen()
     }
 }
