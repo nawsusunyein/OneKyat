@@ -33,10 +33,18 @@ class AdsViewModel : NSObject{
         }
     }
     
+    private(set) var banner : [String]!{
+        didSet{
+            self.bindBannerImagesAdsViewModelToVC()
+        }
+    }
+    
+    
     var bindItemListAdsViewModelToVC : (() -> ()) = {}
     var bindUserListAdsViewModelToVC : (() -> ()) = {}
     var bindSelectedItemAdsViewModelToVC : (() -> ()) = {}
     var bindSelectedSellerAdsViewModelToVC : (() -> ()) = {}
+    var bindBannerImagesAdsViewModelToVC : (() -> ()) = {}
     
     func setItemListModel(){
         var itemList = [ItemModel]()
@@ -80,6 +88,12 @@ class AdsViewModel : NSObject{
         sellerList.append(seller5)
         sellerListModel = sellerList
     }
+    
+    
+    func setBannerImages(){
+        self.banner = ["banner1","banner2","banner3","banner4","banner5","banner6","banner7"]
+    }
+    
     
     func getItemDetailsAndSellerInfo(item : ItemModel){
         let sellerId = item.sellerId

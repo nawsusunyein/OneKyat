@@ -17,15 +17,15 @@ class HomeViewController: UIRootViewController {
     private var index : Int = 0
     private var itemList : [ItemModel] = [ItemModel]()
     private var sellerList : [SellerModel] = [SellerModel]()
-    
+    private var bannerImages : [String] = [String]()
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerCell()
         self.setSearchBarinNavigationBar()
         self.setCustomButtonAtRighInNavigation(iconName : "logout")
         self.setNavigationBarAttributes(title: "Home")
-        self.updateItemList()
-        self.updateSellerList()
+        self.updateItemBannerSellerList()
         self.setItemListAndSellerList()
         self.getItemAndSellerInfo()
     }
@@ -40,27 +40,31 @@ class HomeViewController: UIRootViewController {
         self.tableView.register(cellAds, forCellReuseIdentifier: "AdsTableViewCell")
     }
     
-    //Set item lists and seller list
+    //Set item lists and seller list and banner list
     func setItemListAndSellerList(){
         self.adsViewModel.setItemListModel()
         self.adsViewModel.setSellerList()
+        self.adsViewModel.setBannerImages()
     }
     
-    //Update itemList
-    func updateItemList(){
+    //Update item,banner and seller List
+    func updateItemBannerSellerList(){
         self.adsViewModel.bindItemListAdsViewModelToVC = {
             self.itemList = self.adsViewModel.itemListModel
            
         }
-        self.tableView.reloadData()
-    }
-    
-    //Update sellerList
-    func updateSellerList(){
         self.adsViewModel.bindUserListAdsViewModelToVC = {
             self.sellerList = self.adsViewModel.sellerListModel
         }
+        
+        self.adsViewModel.bindBannerImagesAdsViewModelToVC = {
+            self.bannerImages = self.adsViewModel.banner
+        }
+        
+        self.tableView.reloadData()
     }
+    
+   
 
 }
 
@@ -75,7 +79,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         
         if(indexPath.row == 0){
             let cell = tableView.dequeueReusableCell(withIdentifier: "sliderCell", for: indexPath) as! SliderTableViewCell
-            cell.setSliderImages()
+            cell.setSliderImages(banner : self.bannerImages)
             return cell
         }else{
             let cellAds = tableView.dequeueReusableCell(withIdentifier: "AdsTableViewCell",for: indexPath) as! AdvertisementTableViewCell

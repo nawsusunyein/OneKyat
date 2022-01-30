@@ -15,10 +15,12 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
     @IBOutlet weak var bannerImageView: UIImageView!
     
-    var banner: [String] = ["banner1","banner2","banner3","banner4","banner5","banner6","banner7"]
+    var banner: [String] = [String]()
+    
     var imageFrame = CGRect.zero
     
     var index = 0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -31,8 +33,8 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
         // Configure the view for the selected state
     }
     
-    func setSliderImages(){
-       
+    func setSliderImages(banner : [String]){
+        self.banner = banner
         pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControl.Event.valueChanged)
         self.setTimer()
         configurePageControl()
