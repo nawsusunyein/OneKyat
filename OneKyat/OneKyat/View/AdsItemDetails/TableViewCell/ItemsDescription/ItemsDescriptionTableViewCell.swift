@@ -23,4 +23,7 @@ class ItemsDescriptionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func bindItemDescriptionToUI(itemDescription : String){
+        self.itemDescription.text = itemDescription
+    }
 }

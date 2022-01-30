@@ -71,18 +71,19 @@ extension AdvertisementTableViewCell : UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("index : \(indexPath.row)")
-        delegate?.didSelectItem(index: indexPath.row)
+        let selectedItem = self.itemList[indexPath.row]
+        delegate?.didSelectItem(selectedItem: selectedItem)
         
     }
     
 }
 
 extension AdvertisementTableViewCell : CustomDelegate{
-    func didSelectItem(index: Int) {
-        delegate?.didSelectItem(index: index)
+    func didSelectItem(selectedItem: ItemModel) {
+        delegate?.didSelectItem(selectedItem: selectedItem)
     }
 }
 
 protocol CustomDelegate: class {
-    func didSelectItem(index : Int)
+    func didSelectItem(selectedItem : ItemModel)
 }

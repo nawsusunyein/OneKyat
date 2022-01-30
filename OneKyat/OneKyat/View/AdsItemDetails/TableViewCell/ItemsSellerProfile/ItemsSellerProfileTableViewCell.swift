@@ -29,8 +29,13 @@ class ItemsSellerProfileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func bindProfileInformation(){
+    func bindProfileInformation(sellerInfo : SellerModel?,itemUploadTime : String){
         ImageDecoration.shared.setImageCircleCorner(imageView: self.profileImageView)
+        self.profileImageView.image = UIImage(named: sellerInfo?.sellerImage ?? "")
+        self.lblSellerName.text = sellerInfo?.sellerName
+        self.lblSellerId.text = "@ \(sellerInfo?.sellerId ?? "")"
+        self.lblLocation.text = sellerInfo?.sellerLocation
+        self.lblItemUploadTime.text = itemUploadTime
     }
     
     

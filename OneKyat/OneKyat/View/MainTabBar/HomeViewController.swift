@@ -27,6 +27,7 @@ class HomeViewController: UIRootViewController {
         self.updateItemList()
         self.updateSellerList()
         self.setItemListAndSellerList()
+        self.getItemAndSellerInfo()
     }
     
 
@@ -92,14 +93,32 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         return CGFloat((205 * self.itemList.count) / 2)
     }
     
+    func goToAdsDetailsScreen(itemInfo : ItemModel?, sellerInfo : SellerModel?){
+        let storyboard = UIStoryboard(name : "AdsItemDetails", bundle : nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "AdsItemDetailsIdentifier") as! AdsItemDetailsViewController
+        vc.itemInfo = itemInfo
+        vc.sellerInfo = sellerInfo
+        self.navigationController?.pushViewController(vc, animated: true)
+
+    }
+    
+    
+    func getItemAndSellerInfo(){
+        self.adsViewModel.bindSelectedItemAdsViewModelToVC = {
+            let itemInfo = self.adsViewModel.selectedItem
+            self.adsViewModel.bindSelectedSellerAdsViewModelToVC = {
+                let sellerInfo = self.adsViewModel.selectedSeller
+                self.goToAdsDetailsScreen(itemInfo: itemInfo, sellerInfo: sellerInfo)
+            }
+        }
+       
+    }
     
 }
 
 extension HomeViewController : CustomDelegate{
-    func didSelectItem(index: Int) {
-        let storyboard = UIStoryboard(name : "AdsItemDetails", bundle : nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AdsItemDetailsIdentifier") as! AdsItemDetailsViewController
-        vc.idValue = index
-        self.navigationController?.pushViewController(vc, animated: true)
+    func didSelectItem(selectedItem: ItemModel) {
+        self.adsViewModel.getItemDetailsAndSellerInfo(item: selectedItem)
+        
     }
 }

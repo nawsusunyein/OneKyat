@@ -24,7 +24,9 @@ class ItemsImageTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setItemsImage(name : String){
-        self.itemsImageView.image = UIImage(named : name)
+    func bindItemInfoToUI(item : ItemModel?){
+        self.itemsImageView.image = UIImage(named : item?.itemImage ?? "")
+        self.itemName.text = item?.itemName
+        self.itemPrice.text = "\(String(item?.itemPrice ?? 0.0)) MMK"
     }
 }

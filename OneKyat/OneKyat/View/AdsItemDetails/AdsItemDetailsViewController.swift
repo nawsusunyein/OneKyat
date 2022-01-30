@@ -13,6 +13,10 @@ class AdsItemDetailsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    private var adsViewModel : AdsViewModel = AdsViewModel()
+    public var itemInfo : ItemModel?
+    public var sellerInfo : SellerModel?
+    
     public var idValue : Int = 0
     
     override func viewDidLoad() {
@@ -20,6 +24,7 @@ class AdsItemDetailsViewController: UIViewController {
         self.registerTextFieldEvents()
         self.registerCell()
         self.setTextFieldAttributes()
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +88,22 @@ class AdsItemDetailsViewController: UIViewController {
         TextFieldDecoration.shared.setTextFieldCorner(textField: self.textField, corner : 20.0)
     }
     
+    
+    //Get Selected Item Info
+    func getSelectedItemInfo(){
+       
+        self.adsViewModel.bindSelectedItemAdsViewModelToVC = {
+            self.itemInfo = self.adsViewModel.selectedItem
+            
+            self.adsViewModel.bindSelectedSellerAdsViewModelToVC = {
+                self.sellerInfo = self.adsViewModel.selectedSeller
+                self.tableView.reloadData()
+            }
+            
+        }
+        
+    }
+        
 }
 
 extension AdsItemDetailsViewController : UITableViewDelegate, UITableViewDataSource{
@@ -93,14 +114,15 @@ extension AdsItemDetailsViewController : UITableViewDelegate, UITableViewDataSou
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if(indexPath.row == 0){
             let cellItemsImage = tableView.dequeueReusableCell(withIdentifier: "ItemsDetailsImageIdentifier", for: indexPath) as! ItemsImageTableViewCell
-            cellItemsImage.setItemsImage(name: "banner1")
+            cellItemsImage.bindItemInfoToUI(item: self.itemInfo)
             return cellItemsImage
         }else if(indexPath.row == 1){
             let cellSellerProfile = tableView.dequeueReusableCell(withIdentifier: "ItemsSellerProfileIdentifier",for: indexPath) as! ItemsSellerProfileTableViewCell
-            cellSellerProfile.bindProfileInformation()
+            cellSellerProfile.bindProfileInformation(sellerInfo: self.sellerInfo, itemUploadTime : "2 weeks ago")
             return cellSellerProfile
         }else{
             let cellItemDescription = tableView.dequeueReusableCell(withIdentifier: "ItemsDescriptionIdentifier", for: indexPath) as! ItemsDescriptionTableViewCell
+            cellItemDescription.bindItemDescriptionToUI(itemDescription : self.itemInfo?.itemDescription ?? "")
             return cellItemDescription
         }
     }

@@ -21,9 +21,22 @@ class AdsViewModel : NSObject{
         }
     }
     
+    private(set) var selectedItem : ItemModel!{
+        didSet{
+            self.bindSelectedItemAdsViewModelToVC()
+        }
+    }
+    
+    private(set) var selectedSeller : SellerModel!{
+        didSet{
+            self.bindSelectedSellerAdsViewModelToVC()
+        }
+    }
     
     var bindItemListAdsViewModelToVC : (() -> ()) = {}
     var bindUserListAdsViewModelToVC : (() -> ()) = {}
+    var bindSelectedItemAdsViewModelToVC : (() -> ()) = {}
+    var bindSelectedSellerAdsViewModelToVC : (() -> ()) = {}
     
     func setItemListModel(){
         var itemList = [ItemModel]()
@@ -66,5 +79,12 @@ class AdsViewModel : NSObject{
         sellerList.append(seller4)
         sellerList.append(seller5)
         sellerListModel = sellerList
+    }
+    
+    func getItemDetailsAndSellerInfo(item : ItemModel){
+        let sellerId = item.sellerId
+        let seller = self.sellerListModel.filter({$0.sellerId == sellerId}).first
+        self.selectedItem = item
+        self.selectedSeller = seller
     }
 }
