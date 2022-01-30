@@ -90,7 +90,7 @@ extension HomeViewController : UITableViewDelegate,UITableViewDataSource{
         if(indexPath.row == 0){
             return 180.0
         }
-        return CGFloat((205 * self.itemList.count) / 2)
+        return CGFloat((205 * (self.itemList.count + 1) / 2))
     }
     
     func goToAdsDetailsScreen(itemInfo : ItemModel?, sellerInfo : SellerModel?){
