@@ -18,6 +18,7 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
     var banner: [String] = ["banner1","banner2","banner3","banner4","banner5","banner6","banner7"]
     var imageFrame = CGRect.zero
     
+    var index = 0
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,6 +34,7 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
     func setSliderImages(){
        
         pageControl.addTarget(self, action: #selector(self.changePage(sender:)), for: UIControl.Event.valueChanged)
+        self.setTimer()
         configurePageControl()
         setupImageOnScrollView()
 
@@ -47,7 +49,8 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
             //create image view to add in scrollview for slider
             let imgView = UIImageView(frame: self.imageFrame)
             imgView.image = UIImage(named: banner[index])
-            imgView.contentMode = .scaleAspectFit
+            imgView.contentMode = .scaleToFill
+            
          
             //add image view in scroll view
             self.scrollView.addSubview(imgView)
@@ -61,6 +64,7 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
     
     //Define page control attributes
     func configurePageControl() {
+        self.pageControl.currentPage = 0
         self.pageControl.numberOfPages = banner.count
         self.pageControl.tintColor = UIColor.red
         self.pageControl.pageIndicatorTintColor = UIColor.black
@@ -79,5 +83,22 @@ class SliderTableViewCell: UITableViewCell, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = ceil(scrollView.contentOffset.x / scrollView.frame.size.width)
         pageControl.currentPage = Int(pageNumber)
+    }
+    
+    //Set timer
+    func setTimer(){
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+    }
+    
+    
+    @objc func update()  {
+       index += 1
+        if(index > 6){
+           index = 0
+          
+        }
+        pageControl.currentPage = index
+        let x = CGFloat(index) * scrollView.frame.size.width
+        scrollView.setContentOffset(CGPoint(x:x, y:0), animated: true)
     }
 }
