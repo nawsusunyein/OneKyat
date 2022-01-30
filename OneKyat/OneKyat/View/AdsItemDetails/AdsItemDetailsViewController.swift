@@ -65,7 +65,7 @@ class AdsItemDetailsViewController: UIViewController {
     
     
     @IBAction func callPhone(_ sender: Any) {
-        CommonOperations.shared.callPhoneNumber(phoneNumer: "095182004")
+        CommonOperations.shared.callPhoneNumber(phoneNumer: self.sellerInfo?.sellerPhoneNumber ?? "")
     }
     
     //Register table view cells to show image and user profile and description

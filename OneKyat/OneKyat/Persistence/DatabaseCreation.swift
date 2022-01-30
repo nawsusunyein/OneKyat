@@ -31,6 +31,7 @@ class DataBaseCreation{
             
             try openDB()
             createSellerTable()
+            createItemTable()
         }catch{
             print("something wrong in opening DB")
             return
@@ -61,5 +62,21 @@ class DataBaseCreation{
         sqlite3_finalize(createTableStmt)
     }
     
+    func createItemTable(){
+        
+        let createTableString = "CREATE TABLE IF NOT EXISTS Item(ItemId INTEGER PRIMARY KEY,ItemName TEXT NOT NULL,ItemPrice DOUBLE NOT NULL,SellerId TEXT NOT NULL,ItemDescription TEXT NOT NULL,ItemImage TEXT NOT NULL,ItemUploadTime TEXT NOT NULL);"
+        var createTableStmt : OpaquePointer? = nil
+        if(sqlite3_prepare_v2(db, createTableString, -1, &createTableStmt, nil) == SQLITE_OK){
+            if(sqlite3_step(createTableStmt) == SQLITE_DONE){
+                print("item table created")
+            }else{
+                print("item table can't be created")
+            }
+        }else{
+            print("CREATE TABLE statement could not be prepared.")
+        }
+        
+        sqlite3_finalize(createTableStmt)
+    }
     
 }

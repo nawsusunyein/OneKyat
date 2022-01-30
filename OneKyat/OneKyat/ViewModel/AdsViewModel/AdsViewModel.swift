@@ -47,12 +47,13 @@ class AdsViewModel : NSObject{
     var bindBannerImagesAdsViewModelToVC : (() -> ()) = {}
     
     private var infoDB : DataBaseCreation = DataBaseCreation()
+    var queryStatementString : String? = ""
     
-    func getSellerList(){
-        var queryStatementString : String? = ""
+    func getSellerListFromDB(){
+        
         queryStatementString = "Select * from  Seller;"
         
-        let sellerList = infoDB.reaSellerList(queryStatementString: queryStatementString!)
+        let sellerList = infoDB.readSellerList(queryStatementString: queryStatementString!)
         if(sellerList.count == 0){
             self.setSellerList()
         }else{
@@ -60,6 +61,16 @@ class AdsViewModel : NSObject{
         }
     }
     
+    func getItemListFromDB(){
+        queryStatementString = "Select * from Item;"
+        
+        let itemList = infoDB.readItemList(queryStatementString: queryStatementString!)
+        if(itemList.count == 0){
+            self.setItemListModel()
+        }else{
+            self.itemListModel = itemList
+        }
+    }
     
     func setItemListModel(){
         var itemList = [ItemModel]()
@@ -84,6 +95,11 @@ class AdsViewModel : NSObject{
         itemList.append(item9)
         itemList.append(item10)
         self.itemListModel = itemList
+        
+        for item in self.itemListModel{
+            infoDB.insertItem(item: item)
+        }
+        
     }
     
     func setSellerList(){
