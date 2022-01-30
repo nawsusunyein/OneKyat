@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A250E1227A665550071BB77 /* DatabaseCreation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A250E1127A665550071BB77 /* DatabaseCreation.swift */; };
+		6A250E1727A665920071BB77 /* SqliteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A250E1627A665920071BB77 /* SqliteError.swift */; };
+		6A250E1C27A6667E0071BB77 /* DatabaseOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A250E1B27A6667E0071BB77 /* DatabaseOperations.swift */; };
 		6A34529827A3C98B006E41E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34529727A3C98B006E41E4 /* AppDelegate.swift */; };
 		6A34529C27A3C98B006E41E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34529B27A3C98B006E41E4 /* ViewController.swift */; };
 		6A34529F27A3C98B006E41E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A34529D27A3C98B006E41E4 /* Main.storyboard */; };
@@ -68,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A250E1127A665550071BB77 /* DatabaseCreation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCreation.swift; sourceTree = "<group>"; };
+		6A250E1627A665920071BB77 /* SqliteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqliteError.swift; sourceTree = "<group>"; };
+		6A250E1B27A6667E0071BB77 /* DatabaseOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseOperations.swift; sourceTree = "<group>"; };
 		6A34529427A3C98B006E41E4 /* OneKyat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneKyat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A34529727A3C98B006E41E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A34529B27A3C98B006E41E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +148,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A250E1027A6649A0071BB77 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				6A250E1127A665550071BB77 /* DatabaseCreation.swift */,
+				6A250E1627A665920071BB77 /* SqliteError.swift */,
+				6A250E1B27A6667E0071BB77 /* DatabaseOperations.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		6A34528B27A3C98B006E41E4 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +181,7 @@
 		6A34529627A3C98B006E41E4 /* OneKyat */ = {
 			isa = PBXGroup;
 			children = (
+				6A250E1027A6649A0071BB77 /* Persistence */,
 				6A8CAFDA27A520840076C764 /* Model */,
 				6A34530C27A44097006E41E4 /* ValidationServices */,
 				6A34530227A4290D006E41E4 /* ViewModel */,
@@ -549,10 +566,12 @@
 				6A34530E27A440B6006E41E4 /* ValidationServices.swift in Sources */,
 				6A34536E27A48C92006E41E4 /* AdvertisementTableViewCell.swift in Sources */,
 				6A34531327A441B9006E41E4 /* StringExtension.swift in Sources */,
+				6A250E1727A665920071BB77 /* SqliteError.swift in Sources */,
 				6A3452E827A3EB64006E41E4 /* ButtonDecoration.swift in Sources */,
 				6A34535F27A48A70006E41E4 /* SliderTableViewCell.swift in Sources */,
 				6A3452E327A3EA2B006E41E4 /* UIElemementsColors.swift in Sources */,
 				6A8CB03D27A5A4620076C764 /* SellerModel.swift in Sources */,
+				6A250E1227A665550071BB77 /* DatabaseCreation.swift in Sources */,
 				6A8CB04227A5C3960076C764 /* UIViewDecoration.swift in Sources */,
 				6A34535727A48718006E41E4 /* HomeViewController.swift in Sources */,
 				6A8CAFE527A522950076C764 /* AdsViewModel.swift in Sources */,
@@ -562,6 +581,7 @@
 				6A34533027A461DF006E41E4 /* MainTabBarViewController.swift in Sources */,
 				6A8CAFED27A5260D0076C764 /* AdsItemCollectionViewCell.swift in Sources */,
 				6A34534627A47329006E41E4 /* UIRootViewController.swift in Sources */,
+				6A250E1C27A6667E0071BB77 /* DatabaseOperations.swift in Sources */,
 				6A8CB00D27A57A460076C764 /* CommonOperations.swift in Sources */,
 				6A3452DE27A3E150006E41E4 /* AppConstantsValue.swift in Sources */,
 				6A8CB01427A57F6B0076C764 /* ItemsImageTableViewCell.swift in Sources */,

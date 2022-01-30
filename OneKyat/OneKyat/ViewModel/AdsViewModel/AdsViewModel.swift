@@ -46,6 +46,21 @@ class AdsViewModel : NSObject{
     var bindSelectedSellerAdsViewModelToVC : (() -> ()) = {}
     var bindBannerImagesAdsViewModelToVC : (() -> ()) = {}
     
+    private var infoDB : DataBaseCreation = DataBaseCreation()
+    
+    func getSellerList(){
+        var queryStatementString : String? = ""
+        queryStatementString = "Select * from  Seller;"
+        
+        let sellerList = infoDB.reaSellerList(queryStatementString: queryStatementString!)
+        if(sellerList.count == 0){
+            self.setSellerList()
+        }else{
+            self.sellerListModel = sellerList
+        }
+    }
+    
+    
     func setItemListModel(){
         var itemList = [ItemModel]()
         let item1 = ItemModel(itemId : 1, itemName : "iPhone 13", itemPrice : 1800000.00 ,sellerId : "shweyamone", itemDescription : "99% new condition , you need to come to Tamwe to check the product. Accept bank transfer.", itemImage : "iphone13", itemUploadTime : "")
@@ -72,6 +87,7 @@ class AdsViewModel : NSObject{
     }
     
     func setSellerList(){
+        print("set seller list")
         var sellerList = [SellerModel]()
         let seller1 = SellerModel(sellerId : "shweyamone", sellerName : "Shwe Yamone Oo", sellerImage : "seller1", sellerLocation : "Yangon, Tamwe", sellerPhoneNumber : "0923463738")
         let seller2 = SellerModel(sellerId : "myuhninko28", sellerName : "Myuu Hnin Nyo", sellerImage : "seller2", sellerLocation : "Yangon, Dagon", sellerPhoneNumber : "09234637222")
@@ -87,6 +103,11 @@ class AdsViewModel : NSObject{
         sellerList.append(seller4)
         sellerList.append(seller5)
         sellerListModel = sellerList
+        
+        for sellerModel in self.sellerListModel{
+            infoDB.insertSeller(seller: sellerModel)
+        }
+       
     }
     
     

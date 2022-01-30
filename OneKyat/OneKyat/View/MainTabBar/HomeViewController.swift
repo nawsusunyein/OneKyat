@@ -43,7 +43,7 @@ class HomeViewController: UIRootViewController {
     //Set item lists and seller list and banner list
     func setItemListAndSellerList(){
         self.adsViewModel.setItemListModel()
-        self.adsViewModel.setSellerList()
+        self.adsViewModel.getSellerList()
         self.adsViewModel.setBannerImages()
     }
     
